@@ -1,0 +1,16 @@
+<% if same_user? %>
+<a href='/questions/<%= @question.id %>/edit'>Edit This Question</a>
+<form method="post" action="/questions/<%= @question.id %>">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete This Question">
+</form>
+<% end %>
+
+
+
+
+<h1><%= @question.title %></h1>
+<h4>By: <%= @question.author.username %></h4>
+<p><%= @question.description %></p>
+
+
