@@ -6,6 +6,7 @@ class CreateAnswers < ActiveRecord::Migration
       t.references :commenter
       t.references :question
 
-      t.timestamps, null: false
+      t.timestamps null: false
+    end
   end
 end
