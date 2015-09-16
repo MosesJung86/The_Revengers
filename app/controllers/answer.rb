@@ -4,13 +4,15 @@ get '/questions/:question_id/answers' do
 end
 
 get '/questions/:question_id/answers/new' do
+  @question_id = params[:question_id]
   erb :'/answers/new'
 end
 
 post '/questions/:question_id/answers' do
   answer = Answer.new(params[:answer])
+  @question_id = params[:question_id]
   if answer.save
-    redirect '/questions/#{:question_id}/answers'
+    redirect "/questions/#{@question_id}"
   else
     erb :'/answers/new'
   end
