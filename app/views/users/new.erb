@@ -1,17 +1,13 @@
-<% if @errors %>
-  <%=@errors[0]%>
-<%end%>
+<div class="container">
+<h2>Register For Our Site</h2>
 
-
-<h2>Register for our site</h2>
-
-<form method="post" action="/users">
-  <label for='user[full_name]'>Full Name:</label>
-  <input name='user[full_name]' type='text'>
-  <label for='user[email]'>Email:</label>
-  <input name='user[email]' type='text'>
-  <label for='user[password]'>Password:</label>
-  <input name='user[password]' type='password'>
-
-  <input type='submit' value='Create Account'>
-</form>
+<section id = "regform">
+  <form method="post" action="/users">
+    <label for='username'></label>
+    <input name='username' type='text' required='' placeholder="Username"><br>
+    <label for='password'></label>
+    <input name='password' type='password' required='' placeholder="Password">
+    <input type='submit' value='Create Account'>
+  </form>
+</section>
+</div>
