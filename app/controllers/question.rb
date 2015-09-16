@@ -39,8 +39,8 @@ put '/questions/:question_id' do
 end
 
 #deletes question
-delete 'questions/:question_id' do
+delete '/questions/:question_id' do
   @question = Question.find_by(id: params[:question_id])
   @question.destroy
-  redirect '/'
+  redirect '/questions'
 end
