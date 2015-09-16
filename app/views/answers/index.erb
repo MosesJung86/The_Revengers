@@ -1,14 +1,3 @@
-<% if is_authenticated? %>
-  <p><a href='/users/logout'>Log Out</a></p>
-  <a href='/questions/:question_id/answers/new'>Respond with a new answer</a>
-<% else %>
-  <a href='/users/new'>Register</a>
-  <p><a href='/users/login'>Login</a></p>
-<% end %>
-
-
-<!--
 <% @answers.each do |answer| %>
   <p><a href='/answers/<%= answer.id %>'><%= answer.title %></a></p>
 <% end %>
- -->

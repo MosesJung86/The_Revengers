@@ -8,27 +8,32 @@ get '/questions/:question_id/answers/new' do
 end
 
 post '/questions/:question_id/answers' do
-  redirect '/questions/:question_id/answers'
+  answer = Answer.new(params[:answer])
+  if answer.save
+    redirect '/questions/#{:question_id}/answers'
+  else
+    erb :'/answers/new'
+  end
 end
 
 get '/questions/:question_id/answers/:id' do
-  @answer = Answer.find(params[:id])
+  @answer = Answer.find_by(id: params[:answer_id])
   erb :'/answers/show'
 end
 
 get '/questions/:question_id/answers/:id/edit' do
-  @answer = Answer.find(params[:id])
+  @answer = Answer.find_by(id: params[:answer_id])
   erb :'/answers/edit'
 end
 
 put '/questions/:question_id/answers/:id' do
-  @answer = Answer.find(params[:id])
+  @answer = Answer.find_by(id: params[:answer_id])
   @answer.update_attributes(params[:answer])
-  redirect '/questions/:question_id/answers/#{@answer.id}'
+  redirect '/questions/#{:question_id}/answers/#{@answer.id}'
 end
 
 delete '/questions/:question_id/answers/:id' do
-  @answer = Answer.find(params[:id])
+  @answer = Answer.find_by(id: params[:answer_id])
   @answer.destroy
-  redirect '/questions/:question_id'
+  redirect '/questions/#{:question_id}'
 end
