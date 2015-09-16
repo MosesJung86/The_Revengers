@@ -1,13 +1,12 @@
-<div class="container">
-<h2>Register For Our Site</h2>
+<h1> Welcome <%= @user.username %>!</h1>
 
-<section id = "regform">
+<h3> Edit Your Information </h3>
+<section id = "editform">
   <form method="post" action="/users/:id">
+    <input type="hidden" name="_method" value="put">
     <label for='username'></label>
     <input name='username' type='text' required='' placeholder="Username"><br>
     <label for='password'></label>
     <input name='password' type='password' required='' placeholder="Password">
-    <input type='submit' value='Create Account'>
+    <input type='submit' value='Submit'>
   </form>
-</section>
-</div>
