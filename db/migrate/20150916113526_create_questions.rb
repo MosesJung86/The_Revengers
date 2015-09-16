@@ -4,7 +4,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.string  :title
       t.string  :description
       t.integer :vote_count, default: 0
-      t.timestamps
+      t.timestamps, null: false
       t.references :author
   end
 end
