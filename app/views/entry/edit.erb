@@ -1,0 +1,8 @@
+<form method="post" action="/entries/<%= @entry.id %>" id="new_entry">
+  <input type="hidden" name="_method" value="put">
+  <label for="entry[title]">Title:</label>
+  <input name="entry[title]" type="text" value="<%= @entry.title%>"><br><br>
+  <label for="entry[body]">Body:</label>
+  <textarea name="entry[body]" form="new_entry" rows='10' style="width: 25%" ><%= @entry.body %></textarea><br><br>
+  <input type="submit" value="Update">
+</form>
