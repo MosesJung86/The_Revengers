@@ -1,10 +1,12 @@
+<div class="container">
 <h2>Login</h2>
-
-<form method="post" action="/users/login">
-  <label for='email'>Email:</label>
-  <input name='email' type='text'>
-  <label for='password'>Password:</label>
-  <input name='password' type='password'>
+<%= @form_error %>
+<form method="post" action="/login">
+  <label for='username'></label>
+  <input name='username' type='text' placeholder='Username'>
+  <label for='password'></label>
+  <input name='password' type='password' placeholder='Password'>
 
   <input type='submit' value='Login'>
 </form>
+</div>

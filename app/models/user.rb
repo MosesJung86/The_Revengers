@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
+  include BCrypt
   has_many :questions, foreign_key: 'author_id'
   has_many :answers, foreign_key: 'commenter_id'
-  include BCrypt
 
-  validates :username, presence: :true
+  validates :username, presence: :true, uniqueness: :true
 
   def password
     @password ||= Password.new(password_hash)

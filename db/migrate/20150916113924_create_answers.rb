@@ -10,3 +10,6 @@ class CreateAnswers < ActiveRecord::Migration
     end
   end
 end
+
+# removed comma after timestamps
+# added missing end
