@@ -7,13 +7,17 @@ end
 #new answer form
 get '/questions/:question_id/answers/new' do
   @question_id = params[:question_id]
-  erb :'/answers/new'
+  if logged_in?
+    erb :'/answers/new'
+  else
+    redirect '/login'
+  end
 end
 
 #create new answer
 post '/questions/:question_id/answers' do
-  answer = Answer.new(params[:answer])
   @question_id = params[:question_id]
+  answer = Answer.new(params[:answer])
   if answer.save
     redirect "/questions/#{@question_id}"
   else

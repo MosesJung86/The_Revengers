@@ -1,7 +1,7 @@
 #shows all questions
 get '/questions' do
   @questions = Question.all
-  @question.
+
   erb :'/questions/index'
 end
 

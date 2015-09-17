@@ -17,9 +17,10 @@ q2 = goku.questions.create!(title: 'Can cookies fly?', description: "Seriously..
 
 q3 = daffy.questions.create!(title: 'What do to when girlfriend breaks up with you for the cookie monster?', description: 'Super pissed that she did that. I thought she really liked me. sadface.')
 
-a1 = q1.answers.create!(description: "gluten-free kale cookies")
-a2 = q2.answers.create!(description: "They do. I've seen one back in Kansas.")
-a3 = q2.answers.create!(description: "You idiot. Of course they can.")
-a4 = q2.answers.create!(description: "Yup.")
-a5 = q3.answers.create!(description: "I think you are cute. Want to go on a date?")
-a6 = q3.answers.create!(description: "No worries, plenty of fish in the sea.")
+a1 = q1.answers.create!(description: "gluten-free kale cookies", commenter_id: goku.commenter_id)
+a2 = q2.answers.create!(description: "They do. I've seen one back in Kansas.", commenter_id: minnie.commenter_id)
+a3 = q2.answers.create!(description: "You idiot. Of course they can.", commenter_id: mickey.commenter_id)
+a4 = q2.answers.create!(description: "Yup.", commenter_id: goku.commenter_id)
+a5 = q3.answers.create!(description: "I think you are cute. Want to go on a date?", commenter_id: goku.commenter_id)
+a6 = q3.answers.create!(description: "No worries, plenty of fish in the sea.", commenter_id: daffy.commenter_id)
+

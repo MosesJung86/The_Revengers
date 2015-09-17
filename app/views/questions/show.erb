@@ -8,18 +8,43 @@
   </form>
 <% end %>
 
+<div class='row'>
+
+  <div class='col-md-1 col-md-offset-2 text-center margin-t-20'>
+      <button type="button" class="btn btn-default">
+    <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>
+      </button> <br>
+      <%= @question.votes.count %> <br>
+       <button type="button" class="btn btn-default">
+    <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+      </button> <br>
+  </div>
+
+  <div class='col-md-6'>
+    <h1 class='question-title'><%= @question.title %></h1>
+    <h4>Asked by <%= @question.author.username %></h4>
+    <hr>
+    <p><%= @question.description %></p>
+  </div>
+
+</div>
 
 
-
-<h1><%= @question.title %></h1>
-<h4>By: <%= @question.author.username %></h4>
-<p><%= @question.description %></p>
-
-<% if logged_in? %>
+<div class='row'>
+  <div class='col-md-6 col-md-offset-3'>
+    <h4><%= @question.answers.count %> Answers</h4>
   <p><a href='/questions/<%= @question.id %>/answers/new'>Reply</a><p>
-<% end %>
-
-<h5>Answers:</h5>
-<% @question.answers.each do |answer| %>
-  <p><%= answer.description %><p>
-<% end %>
+    <hr>
+    <% @question.answers.each do |answer| %>
+    <div>
+      <button type="button" class="btn btn-default">
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+      </button>
+    </div>
+      <p><%= answer.description %><p>
+      <p>Answered <%= ((Time.now - answer.created_at.in_time_zone("Pacific Time (US & Canada)"))/60).floor %> minutes ago</p>
+      <p><a href='/users/<%= answer.commenter.id %>'><%= answer.commenter.username %></p>
+      <hr>
+    <% end %>
+  </div>
+</div>
