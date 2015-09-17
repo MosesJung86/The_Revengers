@@ -18,20 +18,12 @@
 
   <!-- Table -->
   <table class="table table-hover">
-    <tr>
-      <td>1234</td>
-      <td>1234</td>
-      <td>1234</td>
-    </tr>
-    <tr>
-      <td>1234</td>
-      <td>1234</td>
-      <td>1234</td>
-    </tr>
-     <tr>
-      <td>1234</td>
-      <td>1234</td>
-      <td>1234</td>
-    </tr>
+    <% @questions.each do |question| %>
+      <tr>
+        <td>Voting Stuff</td>
+        <td><p><a href='/questions/<%= question.id %>'><%= question.title %></a></p></td>
+        <td> Other stuff? </td>
+      </tr>
+    <% end %>
   </table>
 </div>

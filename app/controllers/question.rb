@@ -13,7 +13,7 @@ end
 post '/questions' do
   question = Question.new(params[:question])
   if question.save
-    redirect "/questions/#{question.id}"
+    redirect '/'
   else
     erb :'/questions/new'
   end

@@ -21,9 +21,14 @@
 </head>
 <body>
   <nav class="navbar navbar-default navbar-static-top">
-    <div class="container">
-      <a href='/questions'>Home</a>
-    </div>
+    <a href='/'>Home</a>
+    <% if logged_in? %>
+      <a href='/users/<%= session[:user_id] %>'>Profile</a>
+      <a href='/logout'>Log Out</a>
+    <% else %>
+      <a href='/users/new'>Register</a>
+      <a href='/login'>Login</a>
+    <% end %>
   </nav>
 
   <%= yield %>
