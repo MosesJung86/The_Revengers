@@ -3,9 +3,9 @@ class CreateQuestions < ActiveRecord::Migration
     create_table :questions do |t|
       t.string  :title
       t.string  :description
-      t.integer :vote_count, default: 0
       t.timestamps null: false
       t.references :author
+      t.integer :views, default: 0
     end
   end
 end
