@@ -28,9 +28,13 @@ end
 ## Registration
 
 post '/users' do
-  @user = User.create(params)
-  auth_login(@user)
-  redirect "/users/#{@user.id}"
+  @user = User.new(params)
+  if @user.save
+    auth_login(@user)
+    redirect "/users/#{@user.id}"
+  else
+    erb :'/users/new'
+  end
 end
 
 get '/users/new' do
@@ -52,11 +56,9 @@ get '/users/:id/edit' do
 end
 
 put '/users/:id' do
-  auth_current_user
-  p '*'*50
-  p @current_user
-  @current_user.update(username:params[:username], password:params[:password])
-  redirect "/users/#{@current_user.id}"
+  @user = auth_current_user
+  @user.update(username:params[:username], password:params[:password])
+  redirect "/users/#{@user.id}"
 end
 
 ## Delete one user
