@@ -1,6 +1,7 @@
 #shows all questions
 get '/questions' do
   @questions = Question.all
+  @question.
   erb :'/questions/index'
 end
 
@@ -22,6 +23,8 @@ end
 #show specific question
 get '/questions/:question_id' do
   @question = Question.find_by(id: params[:question_id])
+  @question.views += 1
+  @question.update_attributes(views: @question.views)
   erb :'/questions/show'
 end
 

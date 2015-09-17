@@ -9,6 +9,9 @@ th {
 }
 <<<<<<< HEAD
 */
-=======
 
->>>>>>> 41869f27529f6a50a984b2372ee9f694212cef79
+.inline-b { display: inline-block;}
+
+.text-a-c { text-align: center;}
+
+.w-0 { width: 0;}

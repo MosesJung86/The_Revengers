@@ -12,18 +12,39 @@
 </div>
 
 
-<div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading">Cookie Questions</div>
-
+<!-- <div class="panel panel-default">
+ -->  <!-- Default panel contents -->
+<!--   <div class="panel-heading">Cookie Questions</div>
+ -->
   <!-- Table -->
-  <table class="table table-hover">
-    <% @questions.each do |question| %>
-      <tr>
+<!--   <table class="table table-hover">
+ -->    <% @questions.each do |question| %>
+    <div class="row">
+      <div class="col-md-1 text-a-c">
+          <%= question.votes.count %> </br> vote
+      </div>
+      <div class="col-md-1 text-a-c">
+        <%= question.answers.count %> </br> answers
+      </div>
+      <div class="col-md-1 text-a-c">
+        <%= question.views %> </br> views
+      </div>
+      <div class="col-md-4">
+        <a href='/questions/<%= question.id %>'><%= question.title %></a>
+      </div>
+      <div class="col-md-4">
+       Asked by <%= question.author.username %> <%= question.created_at %> ago
+      </div>
+    </div>
+    <hr>
+
+    <!--   <tr>
         <td>Voting Stuff</td>
         <td><p><a href='/questions/<%= question.id %>'><%= question.title %></a></p></td>
         <td> Other stuff? </td>
-      </tr>
+      </tr> -->
     <% end %>
-  </table>
-</div>
+<!--   </table>
+ -->
+<!-- </div>
+ -->
