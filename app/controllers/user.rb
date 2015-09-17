@@ -51,9 +51,16 @@ end
 ## Update/edit one user
 
 get '/users/:id/edit' do
+  @user = auth_current_user
+ erb :'users/edit'
 end
 
 put '/users/:id' do
+  auth_current_user
+  p '*'*50
+  p @current_user
+  @current_user.update(username:params[:username], password:params[:password])
+  redirect "/users/#{@current_user.id}"
 end
 
 
