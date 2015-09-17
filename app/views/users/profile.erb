@@ -1,4 +1,41 @@
 
 <h1> Welcome <%= @user.username %> </h1>
+<% if edit_profile? %>
+  <a href="/users/<%= @user.id %>/edit">Edit Information</a>
+<% end %>
 
-<a href="/users/<%= @user.id %>/edit">Edit Information</a>
+<div class="row">
+  <div class="col-md-8"><h3>Questions</h3></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+</div>
+
+<% @user.questions.each do |question| %>
+<div class="row">
+  <div class="col-md-1 ctr-txt"><%= question.votes.count %></div>
+  <div class="col-md-8"><a href='/questions/<%= question.id %>'><%= question.title %></a></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+</div>
+<% end %>
+
+<div class="row">
+  <div class="col-md-8"><h3>Answers</h3></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+</div>
+
+<% @user.answers.each do |answer| %>
+<div class="row">
+  <div class="col-md-1 ctr-txt"><%= answer.votes.count %></div>
+  <div class="col-md-8"><a href='/questions/<%= answer.question.id %>'><%= answer.question.title %></a></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+</div>
+<% end %>

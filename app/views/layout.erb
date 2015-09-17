@@ -21,15 +21,22 @@
 </head>
 <body>
   <nav class="navbar navbar-default navbar-static-top">
-    <a href='/'>Home</a>
-    <% if logged_in? %>
-      <a href='/questions/new'>Create Question</a>
-      <a href='/users/<%= session[:user_id] %>'>Profile</a>
-      <a href='/logout'>Log Out</a>
-    <% else %>
-      <a href='/users/new'>Register</a>
-      <a href='/login'>Login</a>
-    <% end %>
+    <div class='row'>
+        <div class="col-md-4"><h3>Cookie Overflow</h3></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1 vert-align"><a href='/'>Home</a></div>
+        <% if logged_in? %>
+          <div class="col-md-4 vert-align"><a href='/questions/new'>Create Question</a></div>
+          <div class="col-md-1 vert-align"><a href='/users/<%= session[:user_id] %>'>Profile</a></div>
+          <div class="col-md-1 vert-align"><a href='/logout'>Log Out</a></div>
+        <% else %>
+          <div class="col-md-1"></div>
+          <div class="col-md-1"></div>
+          <div class="col-md-1"></div>
+          <div class="col-md-1"></div>
+          <div class="col-md-1 vert-align"><a href='/users/new'>Register</a></div>
+          <div class="col-md-1 vert-align"><a href='/login'>Login</a></div>
+        <% end %>
   </nav>
 
   <%= yield %>
