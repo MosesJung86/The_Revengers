@@ -19,6 +19,7 @@
   <p><a href='/questions/<%= @question.id %>/answers/new'>Reply</a><p>
 <% end %>
 
+<h5>Answers:</h5>
 <% @question.answers.each do |answer| %>
   <p><%= answer.description %><p>
 <% end %>
