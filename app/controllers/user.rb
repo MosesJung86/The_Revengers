@@ -1,19 +1,5 @@
 enable :sessions
 
-
-
-## Registration
-
-post '/users' do
-  @user = User.create(params)
-  auth_login(@user)
-  redirect "/users/#{@user.id}"
-end
-
-get '/users/new' do
-  erb :'users/new'
-end
-
 ## Login
 get '/login' do
   erb :'users/login'
@@ -39,6 +25,17 @@ get '/logout' do
   redirect '/login'
 end
 
+## Registration
+
+post '/users' do
+  @user = User.create(params)
+  auth_login(@user)
+  redirect "/users/#{@user.id}"
+end
+
+get '/users/new' do
+  erb :'users/new'
+end
 
 ## Display one user
 
@@ -46,7 +43,6 @@ get '/users/:id' do
   @user = User.find_by(id: params[:id])
   erb :'users/profile'
 end
-
 
 ## Update/edit one user
 
@@ -62,7 +58,6 @@ put '/users/:id' do
   @current_user.update(username:params[:username], password:params[:password])
   redirect "/users/#{@current_user.id}"
 end
-
 
 ## Delete one user
 
