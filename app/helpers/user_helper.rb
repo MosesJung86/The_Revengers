@@ -11,3 +11,11 @@ end
 def auth_logout
   session[:user_id] = nil
 end
+
+def logged_in?
+  !session[:user_id].nil?
+end
+
+def same_user?
+  session[:user_id] == @question.author.id
+end

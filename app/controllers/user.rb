@@ -1,9 +1,12 @@
 enable :sessions
 
+
+
 ## Registration
 
 post '/users' do
   @user = User.create(params)
+  auth_login(@user)
   redirect "/users/#{@user.id}"
 end
 
