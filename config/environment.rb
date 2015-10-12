@@ -3,6 +3,7 @@
 #      http://stackoverflow.com/questions/7243486/why-do-you-need-require-bundler-setup
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile', __FILE__)
 
+require 'active_support/inflector/inflections'
 require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
 
 # Require gems we care about
@@ -32,5 +33,11 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
+
+# module ActiveSupport
+#   Inflector.inflections do |inflect|
+#     inflect.singular(/(o)es$/i, '\1')
+#    end
+# end
 
 enable :sessions

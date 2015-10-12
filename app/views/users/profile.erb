@@ -1,41 +1,60 @@
+<%= erb :'/_navbar' %>
+<div class="container text-center">
+<h1 class="avengerstitle"> Welcome <%= @user.username %> </h1>
+<h4 class="avengers"> Choose your Revenger:</h4>
 
-<h1> Welcome <%= @user.username %> </h1>
-<% if edit_profile? %>
-  <a href="/users/<%= @user.id %>/edit">Edit Information</a>
-<% end %>
-
-<div class="row">
-  <div class="col-md-8"><h3>Questions</h3></div>
-  <div class="col-md-1"></div>
-  <div class="col-md-1"></div>
-  <div class="col-md-1"></div>
-  <div class="col-md-1"></div>
+<div class="col-md-12 vert-align text-center"><a href='/battles' class ="btn btn-danger btn-lg navbar-btn">Battle</a></div>
 </div>
 
-<% @user.questions.each do |question| %>
-<div class="row">
-  <div class="col-md-1 ctr-txt"><%= question.votes.count %></div>
-  <div class="col-md-8"><a href='/questions/<%= question.id %>'><%= question.title %></a></div>
-  <div class="col-md-1"></div>
-  <div class="col-md-1"></div>
-  <div class="col-md-1"></div>
-</div>
-<% end %>
-
-<div class="row">
-  <div class="col-md-8"><h3>Answers</h3></div>
-  <div class="col-md-1"></div>
-  <div class="col-md-1"></div>
-  <div class="col-md-1"></div>
-  <div class="col-md-1"></div>
+<br>
+<div class="c_left avengers text-center">Current Hero
+  <img src="/images/heroes/<%= get_hero_avatar %>.png" style="width:100px;height:100px;">
 </div>
 
-<% @user.answers.each do |answer| %>
-<div class="row">
-  <div class="col-md-1 ctr-txt"><%= answer.votes.count %></div>
-  <div class="col-md-8"><a href='/questions/<%= answer.question.id %>'><%= answer.question.title %></a></div>
-  <div class="col-md-1"></div>
-  <div class="col-md-1"></div>
-  <div class="col-md-1"></div>
+
+  <div class="col-md-4"></div>
+  <div class="col-md-4"></div>
+
+<div class="container">
+  <div class="col-md-12">
+    <% @characters.each do |stat| if stat.char_type == "hero"%>
+      <div class="col-md-6">
+        <table class="table">
+          <tr><th colspan="6" class="text-center">
+            <div class="americapt col-md-12"><%= stat.name %></div>
+
+            <div class="col-md-12"><img src="/images/heroes/<%=stat.picture_id%>.png" alt="Hero" style="width:100px;height:100px;"></div>
+
+            <div class="col-md-8"></div>
+            <div class="change col-md-4 text-center">
+      <form action="/heroes/<%=stat.id%>" method="get">
+        <input type="submit" class="change btn btn-info text-right" value='Select <%=stat.name%>'>
+      </form>
+  </div>
+    </th></tr>
+          <div class="form-group">
+            <tr>
+              <th class="warning">Power Level</th>
+              <th class="success">Health</th>
+              <th class="danger">Attack</th>
+              <th class="info">Defense</th>
+              <th class="warning col-md-4">Special: <%=stat.special1%></th>
+              <th class="danger col-md-4">Special 2: <%=stat.special2%></th>
+          </tr>
+            <tr>
+              <td class="warning"><%= stat.level %></td>
+              <td class="success"><%= stat.health %></td>
+              <td class="danger"><%= stat.attack %></td>
+              <td class="info"><%= stat.defense %></td>
+              <td class="warning">40% chance:<br><%= stat.special1dmg %> dmg</td>
+              <td class="danger">25% chance:<br><%= stat.special2dmg %> dmg</td>
+            </tr>
+            </div>
+  </table>
+  <%end%>
 </div>
-<% end %>
+  <% end %>
+</div>
+</div>
+<hr>
+

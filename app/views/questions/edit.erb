@@ -1,8 +1,0 @@
-<form method="post" action="/questions/<%= @question.id %>" id="new_question">
-  <input type="hidden" name="_method" value="put">
-  <label for="question[title]">Title:</label>
-  <input name="question[title]" type="text" value="<%= @question.title%>"><br><br>
-  <label for="question[description]">Question:</label>
-  <textarea name="question[description]" form="new_question" rows='10' style="width: 25%" ><%= @question.description %></textarea><br><br>
-  <input type="submit" value="Update">
-</form>

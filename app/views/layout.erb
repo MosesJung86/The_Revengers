@@ -14,32 +14,15 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
   <title></title>
 </head>
-<body>
-  <nav class="navbar navbar-default navbar-static-top">
-    <div class='row'>
-        <a href='/' class='style-off'>
-          <div class="col-md-4"><h3>Cookie<img src='/images/cookie_gif.gif-c200' class="cookie-size">verflow</h3>
-          </div>
-        </a>
-        <% if logged_in? %>
-          <div class="col-md-4 vert-align"><a href='/questions/new'>Create Question</a></div>
-          <div class="col-md-1 vert-align"><a href='/users/<%= session[:user_id] %>'>Profile</a></div>
-          <div class="col-md-1 vert-align"><a href='/logout'>Log Out</a></div>
-        <% else %>
-          <div class="col-md-1"></div>
-          <div class="col-md-1"></div>
-          <div class="col-md-1"></div>
-          <div class="col-md-1"></div>
-          <div class="col-md-1 vert-align"><a href='/users/new'>Register</a></div>
-          <div class="col-md-1 vert-align"><a href='/login'>Login</a></div>
-        <% end %>
-  </nav>
+<body <?php body_class(); ?>
 
   <%= yield %>
+
 </body>
 </html>

@@ -1,0 +1,18 @@
+<div class="container transparent">
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class='row'>
+        <a href='/' class='style-off'>
+          <br>
+          <div class="avengerstitle col-md-4 text-center"><h1>The Revengers</h1>
+          </div>
+        </a><div class="col-md-4"></div>
+        <% if session[:user_id] %>
+          <div class="col-md-2 vert-align text-right"><a href='/users/<%= session[:user_id] %>' class ="btn btn-warning navbar-btn">Change Hero</a></div>
+          <div class="col-md-2 vert-align"><a href='/logout' class ="btn btn-info navbar-btn">Log Out</a></div>
+        <% else %>
+          <div class="col-md-2 vert-align"><a href='/users/new' class ="btn btn-info navbar-btn">Register</a></div>
+          <div class="col-md-2 vert-align"><a href='/login' class ="btn btn-info navbar-btn">Login</a></div>
+        <% end %>
+  </nav>
+
+</div>

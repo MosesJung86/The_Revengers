@@ -1,12 +1,23 @@
-<h1> Welcome <%= @user.username %>!</h1>
+<%= erb :'/_navbar' %>
+<div class="container">
+<h3 class="avengers"> Edit Your Information </h3>
+<br>
 
-<h3> Edit Your Information </h3>
+<div class="form-group">
 <section id = "editform">
+
   <form method="post" action="/users/<%= @user.id %>">
     <input type="hidden" name="_method" value="put">
-    <label for='username'></label>
-    <input name='username' type='text' required='' placeholder="Username"><br>
-    <label for='password'></label>
-    <input name='password' type='password' required='' placeholder="Password">
-    <input type='submit' value='Submit'>
+
+    <label for='username' class="avengerssmall">Agent Name:</label>
+    <input name='username' class="form-control" type='text' required='' placeholder="Username"><br>
+
+    <label for='password' class="avengerssmall">Authentication:</label>
+    <input name='password' class="form-control" type='password' required='' placeholder="Password"><br>
+
+    <input type='submit' class="btn btn-primary" value='Submit'>
+
   </form>
+</section>
+</div>
+</div>

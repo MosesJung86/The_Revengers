@@ -8,7 +8,7 @@ end
 post '/login' do
   auth_logout
   @user = User.find_by(username: params[:username])
-  p @user
+  @characters = Character.all
   if @user == nil || @user.password != params[:password]
     @form_error = "Invalid email or password."
     erb :'users/login'
@@ -45,6 +45,7 @@ end
 
 get '/users/:id' do
   @user = User.find_by(id: params[:id])
+  @characters = Character.all
   erb :'users/profile'
 end
 

@@ -1,0 +1,35 @@
+<% if session[:dmg] == 0 %>
+  <div class="col-md-6 text-left">
+    <%=@hero.name%> was not able to heal!
+    <div class="americapt"></div>
+    <div></div>
+  </div>
+  <div class="text-right col-md-6"><%=@enemy.name%> did
+    <div class="americapt"><%=session[:edmg]%></div>damage
+    <div>to <%=@hero.name%></div>
+  </div>
+  <br><br><br>
+  <div class="col-md-6"></div>
+  <div class="col-md-4"></div>
+  <br><br><br>
+  <div class="text-right col-md-6">
+  <%=@enemy.name%>: "Trying to heal?"</div>
+  <div class="col-md-4"></div>
+<% else %>
+  <div class="col-md-6 text-left">
+    <%=@hero.name%> healed
+    <div class="americapt">25</div>health!
+    <div></div>
+  </div>
+  <div class="text-right col-md-6"><%=@enemy.name%> did
+    <div class="americapt"><%=session[:edmg]%></div>damage
+    <div>to <%=@hero.name%></div>
+  </div>
+  <br><br><br>
+  <div class="col-md-6"></div>
+  <div class="col-md-4"></div>
+  <br><br><br>
+  <div class="text-left col-md-8">
+  <%=@hero.name%>: "This revenger is feeling refreshed!"</div>
+  <div class="col-md-4"></div>
+<% end %>

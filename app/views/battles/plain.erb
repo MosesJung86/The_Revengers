@@ -1,0 +1,126 @@
+<body id="plain01">
+<div class="c_right">
+    <table class="table">
+      <tr><th colspan="1" class"text-center">
+      </th></tr>
+    <div class="form-group">
+      <tr><th class="danger text-center">Attack:<br><%=@enemy.attack%></th></tr>
+      <tr><th class="info text-center">Defense: <%=@enemy.defense%></th></tr>
+      <tr><th class="success text-center"><%=@enemy.special1%>:<br>20% chance to do <%=@enemy.special1dmg%> dmg</th></tr>
+      <tr><th class="danger text-center"><%=@enemy.special2%>:<br>10% chance to do <%=@enemy.special2dmg%> dmg</th></tr>
+    </div>
+    </table>
+</div>
+<div class="c_left">
+  <table class="table">
+    <tr><th colspan="1" class"text-center">
+    </th></tr>
+    <div class="form-group">
+      <tr><th class="danger text-center">Attack:<br><%=@hero.attack%></th></tr>
+      <tr><th class="info text-center">Defense: <%=@hero.defense%></th></tr>
+      <tr><th class="success text-center"><%=@hero.special1%>:<br>40% chance to do <%=@hero.special1dmg%> dmg</th></tr>
+      <tr><th class="danger text-center"><%=@hero.special2%>:<br>25% chance to do <%=@hero.special2dmg%> dmg</th></tr>
+    </div>
+  </table>
+</div>
+
+<div class="container">
+<div class="row">_</div>
+<div class="row">_</div>
+<div class="row">_</div>
+<div class="row">_</div>
+<div class="row">_</div>
+<div class="row">_</div>
+<div class="row">_</div>
+
+<div class="col-md-3 text-right">
+  <div class="battlepicture col-md-12 avengers"><%=@hero.name%></div>
+    <div class="heroimg">
+    <img src="/images/heroes/<%= get_hero_avatar %>battle.png" style="width:150px;height:150px;"></div>
+
+    <div class="col-md-12">
+        <div class="progress">
+          <div class="progress-bar  progress-bar-<%=bar_color%> herobar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <%=session[:hp]%>%;">
+          </div>
+        </div>
+    </div>
+    <div class="col-md-12 avengershp text-center hpnum"><%=session[:hp]%></div>
+
+  </div>
+  <div class="col-md-6">
+
+  <div class="display jumbotron">
+    <%= erb :'/battles/_display' %>
+  </div>
+  <br>
+
+  <% if (death == false)%>
+  <div class="col-md-12 form-group">
+
+
+    <div class="col-md-6">
+      <form id="attack" action="/battles/attack" method="get">
+        <input type="hidden" name= "map" value="plain">
+        <input type="submit" class="change btn btn-primary text-center btn-lg" value='Attack'>
+      </form>
+      </div>
+
+    <div class="col-md-6">
+      <form id="heal" action="/battles/heal" method="get">
+        <input type="hidden" name= "map" value="plain">
+        <input type="submit" class="change btn btn-info text-center btn-lg" value='Heal: 25% chance'>
+      </form>
+    </div>
+
+  </div>
+
+
+  <div class="col-md-12 form-group">
+    <div class="col-md-6">
+      <form id="spcl1" action="/battles/special1" method="get">
+        <input type="hidden" name= "map" value="plain">
+        <input type="submit" class="change btn btn-warning text-center btn-lg" value='<%=@hero.special1%>: <%=@hero.special1dmg%>'>
+      </form>
+    </div>
+
+    <div class="col-md-6">
+      <form id="spcl2" action="/battles/special2">
+        <input type="hidden" name= "map" value="plain">
+        <input type="submit" class="change btn btn-danger text-center btn-lg" value='<%=@hero.special2%>: <%=@hero.special2dmg%>'>
+       </form>
+    </div>
+  </div>
+  <% else %>
+    <div class="col-md-12">
+      <form action="/users/<%= session[:user_id]%>">
+        <input type="submit" class="change btn btn-danger text-right btn-lg" value='Return to Base'>
+      </form>
+    </div>
+  <%end%>
+
+
+
+</div>
+
+<div class="col-md-3 text-left">
+  <div class="col-md-12 avengers"><%=@enemy.name %></div>
+
+  <div class="col-md-12">
+     <img src="http://<%= @enemy.picture_id %>" style="width:220px;height:220px;">
+  </div>
+
+    <div class="col-md-12">
+        <div class="progress">
+          <div class="progress-bar  progress-bar-<%=enemy_bar_color%> enemybar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <%=session[:enemyhp]%>%;">
+          </div>
+        </div>
+    </div>
+    <div class="col-md-12 avengershp text-center enemyhpnum"><%=session[:enemyhp]%></div>
+</div>
+
+
+
+
+
+</div>
+</body>

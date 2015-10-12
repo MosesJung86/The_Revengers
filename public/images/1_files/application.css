@@ -1,0 +1,88 @@
+/*.container {
+  margin: 20px auto;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+  border: 1px dotted black;
+}
+th {
+  text-align: left;
+}
+*/
+/*body {
+    background-image:  url(/images/shield.jpg);
+    background-size:   cover;
+    background-repeat: no-repeat;
+    background-position: center center;/* optionally, center the image /*
+}*/
+
+.inline-b { display: inline-block;}
+
+.text-a-c { text-align: center;}
+
+.w-0 { width: 0;}
+
+.ctr-txt {
+  text-align: center;
+}
+
+.vert-align {
+  padding-top: 0.8em;
+  margin-top: 1em;
+}
+
+.centering {
+  max-width: 600px;
+  margin: 0 auto;
+  float: none;
+}
+
+.margin-t-20 { margin-top: 20px;}
+
+.question-title { margin-top: 10px;}
+
+.cookie-size { width: 40px; height: 40px;}
+
+.style-off { text-decoration: none; color: black;}
+.style-off:hover {color: black;}
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+.avengerstitle{
+  font-size: 3em;
+  font-family: "avengeance";
+}
+.avengers{
+  font-size: 2em;
+  font-family: "avengeance";
+}
+.avengerssmall{
+  font-size: 1.5em;
+  font-family: "avengeance";
+}
+.americapt{
+  font-size: 2em;
+  font-family: "american captain"
+}
+.current{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100px;
+  outline: 1px solid black;
+  background-color: white;
+  z-index: 9999;
+}
+.display {
+  height: 300px;
+  outline:3px solid black;
+  background-color: black;
+  color: white;
+}

@@ -1,12 +1,19 @@
+<%= erb :'/_navbar' %>
 <div class="container">
-<h2>Login</h2>
+<h2 class="avengerstitle">Login to S.H.I.E.L.D.</h2>
+<br>
 <%= @form_error %>
+<br>
+<div class="form-group">
 <form method="post" action="/login">
-  <label for='username'></label>
-  <input name='username' type='text' placeholder='Username'>
-  <label for='password'></label>
-  <input name='password' type='password' placeholder='Password'>
 
-  <input type='submit' value='Login'>
+  <label for='username' class="avengerssmall">Agent Name:</label>
+  <input name='username' class="form-control" type='text' placeholder='Username'><br>
+
+  <label for='password' class="avengerssmall">Authentication:</label>
+  <input name='password' class="form-control" type='password' placeholder='Password'><br>
+
+  <input type='submit' class="btn btn-info" value='Login'>
 </form>
+</div>
 </div>

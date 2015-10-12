@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   include BCrypt
-  has_many :questions, foreign_key: 'author_id'
-  has_many :answers, foreign_key: 'commenter_id'
+  has_many :user_characters
+  has_many :characters, through: :user_characters
 
   validates :username, presence: :true, uniqueness: :true
 

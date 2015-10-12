@@ -1,0 +1,80 @@
+<%= erb :'/_navbar' %>
+<div clas="col-md-12">
+  <div class="c_left avengers text-center">Current Hero
+    <img src="/images/heroes/<%= get_hero_avatar %>.png" style="width:100px;height:100px;">
+  </div>
+
+  <div class="cold-md-12">
+    <h1 class="avengerstitle text-center">
+       : : : : : : : : : : : : : : : : : : : : : : : : : Pick a Stage : : : : : : : : : : : : : : : : : : : : : : : : : : : : : :
+    </h1>
+  </div>
+
+  <div class="cold-md-12">
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+      <a href="/battles/plains">
+        <h3 class="americapt text-center">Crossroads (Basic Enemy)</h3>
+        <img src="/images/maps/plain01.jpg" alt="crossroads" class="img-rounded" height="300" width="500">
+      </a>
+    </div>
+    <div class="col-md-1"></div>
+
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+      <a href="/battles/dungeons">
+        <h3 class="americapt text-center">Dungeons (Strong Enemy)</h3>
+        <img src="/images/maps/dungeon01.jpg" alt="dungeon" class="img-rounded" height="300" width="500">
+      </a>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+
+  <div class="container">
+  <div class="col-md-12">
+    <% @characters.each do |stat| if stat.char_type == "boss"%>
+      <div class="col-md-6">
+        <table class="table">
+          <tr><th colspan="6" class="text-center">
+            <div class="americapt col-md-12"><%= stat.name %></div>
+
+            <div class="col-md-12"><img src="/images/bosses/<%=stat.picture_id%>.png" alt="Boss" style="width:100px;height:100px;"></div>
+
+            <div class="col-md-8"></div>
+            <div class="change col-md-4 text-center">
+      <form action="/bosses/<%=stat.id%>" method="get">
+        <input type="submit" class="change btn btn-danger text-right" value='Fight <%=stat.name%>'>
+      </form>
+  </div>
+    </th></tr>
+          <div class="form-group">
+            <tr>
+              <th class="warning">Power Level</th>
+              <th class="success">Health</th>
+              <th class="danger">Attack</th>
+              <th class="info">Defense</th>
+              <th class="warning col-md-4">Special: <%=stat.special1%></th>
+              <th class="danger col-md-4">Special 2: <%=stat.special2%></th>
+          </tr>
+            <tr>
+              <td class="warning"><%= stat.level %></td>
+              <td class="success"><%= stat.health %></td>
+              <td class="danger"><%= stat.attack %></td>
+              <td class="info"><%= stat.defense %></td>
+              <td class="warning"><%= stat.special1dmg %></td>
+              <td class="danger"><%= stat.special2dmg %></td>
+            </tr>
+            </div>
+  </table>
+  <%end%>
+</div>
+  <% end %>
+</div>
+</div>
+
+
+
+
+
+
+</div>

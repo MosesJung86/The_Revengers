@@ -1,0 +1,148 @@
+#plain01 {
+    background-image:  url(/images/maps/plain02.jpg);
+    background-size:   cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding-top: 2em;
+    /* optionally, center the image */
+}
+#dungeon01 {
+    background-image:  url(/images/maps/dungeon01.jpg);
+    background-size:   cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding-top: 2em;
+    /* optionally, center the image */
+}
+#world01 {
+    background-image:  url(/images/maps/world01.jpg);
+    background-size:   cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding-top: 2em;
+    /* optionally, center the image */
+}
+#world05 {
+    background-image:  url(/images/maps/world05.jpg);
+    background-size:   cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding-top: 2em;
+    /* optionally, center the image */
+}
+
+.display {
+  font-family: Verdana
+}
+.battlescreen{
+  border: 1px black;
+}
+.inline-b { display: inline-block;}
+
+.text-a-c { text-align: center;}
+
+.w-0 { width: 0;}
+
+.ctr-txt {
+  text-align: center;
+}
+
+.vert-align {
+  padding-top: 0.8em;
+  margin-top: 1em;
+}
+
+.centering {
+  max-width: 600px;
+  margin: 0 auto;
+  float: none;
+}
+
+.margin-t-20 { margin-top: 20px;}
+
+.question-title { margin-top: 10px;}
+
+.cookie-size { width: 40px; height: 40px;}
+
+.style-off { text-decoration: none; color: black;}
+.style-off:hover {color: black;}
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+.avengershp {
+  font-size: 8em;
+  font-family: "avengeance";
+  color: #E50B00;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.avengerstitle{
+  font-size: 3em;
+  letter-spacing: 2px;
+  font-family: "avengeance";
+  color: #E50B00;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.avengers{
+  font-size: 2em;
+  letter-spacing: 2px;
+  font-family: "avengeance";
+  color: #E50B00;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.avengerssmall{
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  font-family: "avengeance";
+  color: #E50B00;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.americapt{
+  font-size: 2em;
+  letter-spacing: 2px;
+  font-family: "american captain";
+  color: #E50B00;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.c_right{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100px;
+  outline: 1px solid black;
+  background-color: white;
+  z-index: 9999;
+}
+.c_left{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  outline: 1px solid black;
+  background-color: white;
+  z-index: 9999;
+}
+.display {
+  height: 300px;
+  outline:3px solid black;
+  background-color: black;
+  color: white;
+}
+.battlespace{
+  padding-bottom: 1em;
+}
+.heroimg{
+  padding-top: 7em;
+  padding-bottom: 1em;
+  padding-right: 5em;
+}
+.transparent {
+  background: rgba(0, 0, 0, 00);
+}

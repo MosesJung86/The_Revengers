@@ -1,26 +1,26 @@
-require 'faker'
+mickfury = Character.create!(name: 'Mick Fury', char_type: "hero", health: 100, attack: "5-10", defense: 0, level: 6, picture_id: "00", message: "You threatened my world with war. You might not be glad that you did", special1: "Pistol", special1dmg: 15, special2: "Call in the Revengers",special2dmg: 50)
+captainusa = Character.create!(name: 'Captain USA', char_type: 'hero', health: 120, attack: "5-10", defense: 2, level: 8, picture_id: "01", message: "Revengers Assemble!", special1: "Shield Bash", special1dmg: 20, special2: "Shield Throw", special2dmg: 25, current_hero: true)
+metalman = Character.create!(name: 'Metal Man', char_type: 'hero', health: 110, attack: "8-12", defense: 1, level: 9, picture_id: "02", message: "Give me a scotch, I'm starving", special1: "Metal Beam", special1dmg: 20, special2: "Energy Repulsor", special2dmg: 30)
+thundergod = Character.create!(name: 'Thunder God', char_type: 'hero', health: 125, attack: "5-10", defense: 1, level: 10, picture_id: "03", message: "Now you face the Mightiest Revenger of all!", special1: "Lightning Bolt", special1dmg: 20, special2: "Hammer Throw", special2dmg: 40)
+# "Waves are but water. Wind but air. And though lightning be fire...yet it must answer thunder's call."
+bulk = Character.create!(name: 'Bulk', char_type: 'hero', health: 125, attack: "8-12", defense: 0, level: 10, picture_id: "04", message: "Bulk is strongest one there is!", special1: "Get Angry", special1dmg: 20, special2: "Bulk Smash", special2dmg: 40)
+# "BULK SMASH!"
+eagleeye = Character.create!(name: 'Eagle Eye', char_type: "hero", health: 100, attack: "5-10", defense: 0, level: 7, picture_id: "05", message: "I see better from a distance", special1: "Triple Arrow", special1dmg: 20, special2: "Explosive Arrow", special2dmg: 30)
+blackrecluse = Character.create!(name: 'Black Recluse', char_type: "hero", health: 100, attack: "8-12", defense: 0, level: 7, picture_id: "06", message: "I'm sorry, did I step on your moment?", special1: "Pistol", special1dmg: 20, special2: "Hyah", special2dmg: 25)
+crimsonvitch = Character.create!(name: 'Crimson Vitch', char_type: "hero", health: 100, attack: "8-12", defense: 0, level: 10, picture_id: "07", message: "Love is for souls, not bodies", special1: "Probability Manipulation:", special1dmg: 20, special2: "Reality Warping", special2dmg: 40)
+swiftgrey = Character.create!(name: 'Swift Grey', char_type: "hero", health: 100, attack: "5-10", defense: 0, level: 8, picture_id: "08", message: "You didn't see that coming?", special1: "Swift Attack", special1dmg: 15, special2: "Super Speed", special2dmg: 30)
+daydream = Character.create!(name: 'DayDream', char_type: "hero", health: 120, attack: "8-12", defense: 1, level: 9, picture_id: "09", message: "Unlike most humans, I prefer not to speak unless I have something to say", special1: "DayDream Beam", special1dmg: 25, special2: "Infinity Beam", special2dmg: 40)
+wolferine = Character.create!(name: 'Wolferine', char_type: "hero", health: 120, attack: "5-10", defense: 1, level: 9, picture_id: "10", message: "Ya got a starin problem, bub?", special1: "X Slash", special1dmg: 25, special2: "Berserker Barrage", special2dmg: 40)
+creature = Character.create!(name: 'Creature', char_type: "hero", health: 120, attack: "5-10", defense: 1, level: 8, picture_id: "11", message: "Oh.. My stars and garters!", special1: "Beast Punch", special1dmg: 25, special2: "Slam", special2dmg: 40)
 
-20.times {
-
-User.create!(username: Faker::Internet.user_name, password: Faker::Internet.password(8))
-};
-
-mickey = User.create!(username: 'Mickey', password: 123)
-minnie = User.create!(username: 'Minnie', password: 123)
-daffy = User.create!(username: 'Daffy', password: 123)
-goku = User.create!(username: 'Goku', password: 123)
-
-
-q1 = mickey.questions.create!(title: 'What cookie is the healthiest?',description: "I\'m on a diet and wondering which cookie is good for you.")
-
-q2 = goku.questions.create!(title: 'Can cookies fly?', description: "Seriously.....can they?")
-
-q3 = daffy.questions.create!(title: 'What do to when girlfriend breaks up with you for the cookie monster?', description: 'Super pissed that she did that. I thought she really liked me. sadface.')
-
-a1 = q1.answers.create!(description: "gluten-free kale cookies", commenter_id: goku.commenter_id)
-a2 = q2.answers.create!(description: "They do. I've seen one back in Kansas.", commenter_id: minnie.commenter_id)
-a3 = q2.answers.create!(description: "You idiot. Of course they can.", commenter_id: mickey.commenter_id)
-a4 = q2.answers.create!(description: "Yup.", commenter_id: goku.commenter_id)
-a5 = q3.answers.create!(description: "I think you are cute. Want to go on a date?", commenter_id: goku.commenter_id)
-a6 = q3.answers.create!(description: "No worries, plenty of fish in the sea.", commenter_id: daffy.commenter_id)
-
+# Bosses:
+crimsoncranium = Character.create!(name: 'Crimson Cranium', char_type: "boss", health: 120, attack: "8-15", defense: 1, level: 8, picture_id: "12", message: "We are both tragedies... And now I send our tortured souls to rest!", special1: "Strategic Genius", special1dmg: 25, special2: "Political Mastermind", special2dmg: 30)
+toxin = Character.create!(name: 'Toxin', char_type: "boss", health: 120, attack: "8-15", defense: 1, level: 8, picture_id: "13", message: "No, no, no. You've got it all wrong. Venom's old news... All played out. These days I prefer to be called-- Toxin!", special1: "Venom Rush", special1dmg: 25, special2: "Venom Fang", special2dmg: 30)
+mystiq = Character.create!(name: 'Mystiq', char_type: "boss", health: 120, attack: "8-15", defense: 1, level: 8, picture_id: "14", message: "Hey there, Sugar", special1: "Superhuman Reflex Kick", special1dmg: 25, special2: "Shapeshift", special2dmg: 30)
+ravage = Character.create!(name: 'Ravage', char_type: "boss", health: 120, attack: "8-15", defense: 1, level: 8, picture_id: "15", message: "I am the ultimate insanity! I am CARNAGE!", special1: "Ravage Rush", special1dmg: 25, special2: "Ravage Fang", special2dmg: 30)
+mrmalevolent = Character.create!(name: 'Mr. Malevolent', char_type: "boss", health: 120, attack: "8-15", defense: 1, level: 8, picture_id: "16", message: "And yet, one thing will always remain constant-- Sinister!", special1: "Sinister Rush", special1dmg: 25, special2: "Sinister", special2dmg: 30)
+nuggerjaut = Character.create!(name: 'Nuggerjaut', char_type: "boss", health: 140, attack: "8-15", defense: 2, level: 8, picture_id: "17", message: "I'm the Nuggerjaut bitch!", special1: "Nuggerjaut Rush", special1dmg: 25, special2: "Nuggerjaut Slam", special2dmg: 40)
+lowkey = Character.create!(name: 'Lowkey', char_type: "boss", health: 120, attack: "8-15", defense: 1, level: 9, picture_id: "18", message: "You WILL kneel before me!", special1: "Enemy Blasts", special1dmg: 25, special2: "Astral Projection", special2dmg: 30)
+vultron = Character.create!(name: 'Vultron', char_type: "boss", health: 120, attack: "8-15", defense: 1, level: 9, picture_id: "19", message: "I once had strings, but now I'm free... There are no strings on me!", special1: "Concussion Blast", special1dmg: 25, special2: "Hidden Weapon", special2dmg: 30)
+magnetor = Character.create!(name: 'Magnetor', char_type: "boss", health: 150, attack: "10-18", defense: 2, level: 10, picture_id: "20", message: "Right now, the world doesn't need heroes. It needs villains.", special1: "Magnetic Force", special1dmg: 25, special2: "Magnetism Manipulation", special2dmg: 40)
+dranos = Character.create!(name: 'Dranos', char_type: "boss", health: 200, attack: "8-25", defense: 3, level: 10, picture_id: "21", message: "Fools taking up arms against omnipotence.", special1: "Energy Manipulation", special1dmg: 30, special2: "Annihilation Wave", special2dmg: 50)

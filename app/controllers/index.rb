@@ -1,4 +1,4 @@
 get '/' do
-  @questions = Question.all
+  @characters = Character.all
   erb :index
 end

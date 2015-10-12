@@ -1,13 +1,22 @@
+<%= erb :'/_navbar' %>
 <div class="container">
-<h2>Register For Our Site</h2>
+<h2 class="avengerstitle">Register to be a Revenger</h2>
+<br>
 
+<div class="form-group">
 <section id = "regform">
+
   <form method="post" action="/users">
-    <label for='username'></label>
-    <input name='username' type='text' required='' placeholder="Username"><br>
-    <label for='password'></label>
-    <input name='password' type='password' required='' placeholder="Password">
-    <input type='submit' value='Create Account'>
+
+    <label for='username' class="avengerssmall">Agent Name:</label>
+    <input name='username' class="form-control" type='text' required='' placeholder="Username"><br>
+
+    <label for='password' class="avengerssmall">Authentication:</label>
+    <input name='password' class="form-control" type='password' required='' placeholder="Password"><br>
+
+    <input type='submit' class="btn btn-primary" value='Create Account'>
+
   </form>
 </section>
+</div>
 </div>
